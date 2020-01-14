@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+html {
+  background: url(rickandmorty.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  background-color: rgb(56, 55, 55);
+  padding: 0px 40px;
   color: white;
+  position: sticky;
+  top: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  min-width: 40vh;
+  justify-content: space-between;
+  list-style: none;
+  color: white
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  column-gap: 5vh;
 }
