@@ -23,8 +23,10 @@ export default class Characters extends Component{
                 name={i.name}
                 img={i.image}
                 species={i.species}
+                type={i.type}
                 status={i.status}
-                episodeCount={i.episode.length}>
+                episode={i.episode}
+                >
               </Card>
               
     })
@@ -33,7 +35,7 @@ export default class Characters extends Component{
   render(){
     return(
       <div>
-        <div className='card-container'>
+        <div className='main-container'>
           {this.renderCharacters()}
         </div>
       </div>

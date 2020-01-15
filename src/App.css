@@ -16,6 +16,10 @@ nav {
   top: 0;
 }
 
+li {
+  list-style: none;
+}
+
 .nav-links {
   display: flex;
   flex-direction: row;
@@ -25,9 +29,42 @@ nav {
   color: white
 }
 
-.card-container {
+.main-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 1fr;
   column-gap: 5vh;
 }
+
+.card-container, .card-front, .card-back {
+  min-width: 300px;
+  min-height: 600px;
+}
+
+.card-container {
+  perspective: 100;
+}
+
+.card-sides {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s;
+}
+
+.card-front, .card-back {
+  position: absolute ;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  z-index: 1;
+  transform: rotateY(0deg)
+}
+
+.card-back {
+  transform: rotateY(180deg)
+}
+
+.card-container:hover .card-sides {transform: rotateY(180deg);}
